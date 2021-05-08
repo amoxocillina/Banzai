@@ -6,12 +6,10 @@ import random
 n = 9
 array = np.zeros((n, n), dtype=int)
 r = 0
-# for r in range(9):
 while r < n:
     while True:
         try:
             c = 0
-            # for c in range(9):
             while c < n:
                 liner = [1, 2, 3, 4, 5, 6, 7, 8, 9]
                 col = array[:, c]
@@ -40,7 +38,6 @@ while r < n:
                     col_end = 9
 
                 sub = array[row_init:row_end, col_init:col_end].flatten()
-                #sub = array[0:3, 0:3].flatten()
                 cross = np.intersect1d(row_res, col_res)
                 sector = np.setdiff1d(cross, sub)
                 array[r, c] = np.random.choice(sector)
